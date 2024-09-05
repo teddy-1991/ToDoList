@@ -98,3 +98,46 @@ function changeScreen(event){
     afterClickDate.classList.toggle('show');
     bigCal.remove();
 }
+
+function saveToDos() {
+    const toDos = [];
+    document.querySelectorAll('.todo-item').forEach(item => {
+        toDos.push({ text: item.querySelector('span').innerText,
+            completed: item.classList.contains('completed')
+        });
+    });
+    localStorage.setItem('toDos', JSON.stringify(toDos));
+}
+
+function loadToDos() {
+    const savedToDos = JSON.parse(localStorage.getItem('toDos'));
+    if (savedToDos) {
+        savedToDos.forEach(todo => {
+            const li = document.createElement('li');
+            li.classList.add('todo-item');
+            if (todo.completed) li.classList.add('completed');
+
+            li.innerHTML = `
+            <input type="checkbox" id="checkBoxId">
+            <span>${todo.text}</span>
+            <div>
+                <button class="delete-btn">Delete</button>
+            </div>
+            `;
+
+            todoList.appendChild(li);
+        });
+    }
+}
+
+window.addEventListener('load', loadToDos);
+
+todoForm.addEventListener('submit', () => {
+    addTodo(event);
+    saveToDos();
+});
+
+todoList.addEventListener('click', () => {
+    handleTodoClick(event);
+    saveToDos();
+})
