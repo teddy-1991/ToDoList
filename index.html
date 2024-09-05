@@ -1,0 +1,56 @@
+<!-- I got some help from chatGPT for making the basic structure of this app. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name of Webpage</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- 메인화면 큰 달력-->
+    <div>
+        <div id="monthYear1"></div>
+    
+<!-- 달력 레이아웃을 잡기 위한 div들 -->
+        <div>
+            <div class="grid-7">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+
+            <div id="dates" class="grid-7"></div>
+        </div>
+    </div>
+    
+<!-- 날짜를 클릭 했을 때, 보여 질 달력, to-do list, 날씨-->
+    <div id="afterClickDate" class="dateClicked">
+        <div class="container">
+            <h1>To-Do List</h1>
+            <form id="todo-form">
+                <input type="text" id="todo-input" placeholder="Write something" required />
+                <button type="submit">Add</button>
+            </form>
+            <ul id="todo-list"></ul>
+        </div>
+        <div class="memo-container">
+            <div class="processing-container">
+                <h1 id="selectedDate"></h1>
+            </div>
+            <textarea id="memo"></textarea>
+        </div>
+        <div>
+            <button>Save</button>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

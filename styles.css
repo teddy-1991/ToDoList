@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.grid-7 {
+    display: grid;
+    place-items: center center;
+    grid-template-columns: repeat(7, 1fr);
+}
+.grid-7 > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 70px;
+    height: 70px;
+    cursor: default;
+}
+#dates span {
+    cursor: pointer;
+}
+.smallCalender > div {
+    width: 50px;
+    height: 60px;
+}
+
+#monthYear {
+    margin-left: 30px;
+}
+
+.dateClicked {
+    display: none;
+}
+
+.dateClicked.show {
+    display: flex;
+}
+
+.container {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 400px;
+    height: 500px;
+    text-align: center;
+}
+
+h1 {
+    padding: 1rem;
+}
+
+#todo-form {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+#todo-form button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+#todo-list {
+    list-style: none;
+}
+
+/* check this part, where does it come from??? */
+
+.todo-item {
+    background-color: #f9f9f9;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px;
+}
+
+.todo-item.completed {
+    text-decoration: line-through;
+    color: #999;
+}
+
+
+#memo {
+    width: 400px;
+    height: 300px;
+}
+
+.memo-container {
+    margin-left: 1rem;
+}
+
+.processing-container {
+    background-color: #f9f9f9;
+    width: 400px;
+    height: 150px;
+    margin-bottom: 50px;
+    text-align: center;
+}
